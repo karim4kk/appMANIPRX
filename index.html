@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MIMSP</title>
 
+  <!-- كود مكتبة OneSignal -->
   <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
   <script>
     window.OneSignalDeferred = window.OneSignalDeferred || [];
@@ -12,13 +13,16 @@
       await OneSignal.init({
         appId: "93b38a5a-5cda-4254-a3a6-79dba622c0df",
       });
+
+      // طلب إذن الإشعارات من المستخدم فور فتح التطبيق
       OneSignal.Notifications.requestPermission();
     });
   </script>
 
+  <!-- كود التحويل التلقائي لمنصة MIMSP -->
   <script>
     setTimeout(function() {
-      window.location.href = "https://sites.google.com/view/YOUR_GOOGLE_SITE_NAME";
+      window.location.href = "https://sites.google.com/view/mimsp/";
     }, 1200);
   </script>
 </head>
