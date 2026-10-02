@@ -5,30 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MIMSP</title>
 
-  <!-- كود OneSignal SDK v16 الجديد -->
+  <!-- استدعاء مكتبة OneSignal v16 -->
   <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
   <script>
     window.OneSignalDeferred = window.OneSignalDeferred || [];
     OneSignalDeferred.push(async function(OneSignal) {
       await OneSignal.init({
         appId: "93b38a5a-5cda-4254-a3a6-79dba622c0df",
+        serviceWorkerParam: { scope: "/appMANIPRX/" },
+        serviceWorkerPath: "appMANIPRX/OneSignalSDKWorker.js"
       });
 
-      // طلب الإذن تلقائياً
+      // طلب إذن الإشعارات فوراً
       OneSignal.Notifications.requestPermission();
     });
 
-    // تحويل تلقائي فوري بعد 1.5 ثانية
+    // تحويل تلقائي بعد 3 ثوانٍ
     setTimeout(function() {
       window.location.href = "https://sites.google.com/view/mimsp/";
-    }, 1500);
+    }, 3000);
   </script>
 </head>
 <body style="background-color: #ffffff; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; font-family: sans-serif;">
-  
   <div style="text-align: center;">
     <h3>جاري تحميل منصة MIMSP...</h3>
   </div>
-
 </body>
 </html>
