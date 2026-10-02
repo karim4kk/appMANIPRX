@@ -5,8 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MIMSP</title>
 
-  <!-- كود إشعارات OneSignal -->
+  <!-- 1. تحويل احتياطي فوري لموقع Google Sites -->
+  <meta http-equiv="refresh" content="2; url=https://sites.google.com/view/mimsp/">
+
+  <!-- 2. مكتبة OneSignal -->
   <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+
+  <!-- 3. كود تفعيل الإشعارات والتحويل -->
   <script>
     window.OneSignalDeferred = window.OneSignalDeferred || [];
     OneSignalDeferred.push(async function(OneSignal) {
@@ -15,10 +20,12 @@
       });
       OneSignal.Notifications.requestPermission();
     });
-  </script>
 
-  <!-- التحويل الفوري لموقع MIMSP -->
-  <meta http-equiv="refresh" content="1; url=https://sites.google.com/view/mimsp/">
+    // تحويل تلقائي بعد ثانية ونصف
+    setTimeout(function() {
+      window.location.href = "https://sites.google.com/view/mimsp/";
+    }, 1500);
+  </script>
 </head>
 <body style="background-color: #ffffff; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; font-family: sans-serif;">
   <div style="text-align: center;">
