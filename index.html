@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MIMSP</title>
 
-  <!-- كود مكتبة OneSignal -->
+  <!-- كود إشعارات OneSignal -->
   <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
   <script>
     window.OneSignalDeferred = window.OneSignalDeferred || [];
@@ -13,16 +13,12 @@
       await OneSignal.init({
         appId: "93b38a5a-5cda-4254-a3a6-79dba622c0df",
       });
-
-      // طلب إذن الإشعارات تلقائياً
       OneSignal.Notifications.requestPermission();
     });
   </script>
 
-  <!-- كود التحويل التلقائي المباشر لموقع MIMSP -->
-  <script>
-    window.location.replace("https://sites.google.com/view/mimsp/");
-  </script>
+  <!-- التحويل الفوري لموقع MIMSP -->
+  <meta http-equiv="refresh" content="1; url=https://sites.google.com/view/mimsp/">
 </head>
 <body style="background-color: #ffffff; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; font-family: sans-serif;">
   <div style="text-align: center;">
