@@ -14,16 +14,14 @@
         appId: "93b38a5a-5cda-4254-a3a6-79dba622c0df",
       });
 
-      // طلب إذن الإشعارات من المستخدم فور فتح التطبيق
+      // طلب إذن الإشعارات تلقائياً
       OneSignal.Notifications.requestPermission();
     });
   </script>
 
-  <!-- كود التحويل التلقائي لمنصة MIMSP -->
+  <!-- كود التحويل التلقائي المباشر لموقع MIMSP -->
   <script>
-    setTimeout(function() {
-      window.location.href = "https://sites.google.com/view/mimsp/";
-    }, 1200);
+    window.location.replace("https://sites.google.com/view/mimsp/");
   </script>
 </head>
 <body style="background-color: #ffffff; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; font-family: sans-serif;">
