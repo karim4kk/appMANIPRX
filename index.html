@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MIMSP</title>
 
-  <!-- 1. استدعاء مكتبة OneSignal -->
+  <!-- كود OneSignal SDK v16 الجديد -->
   <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
   <script>
     window.OneSignalDeferred = window.OneSignalDeferred || [];
@@ -13,34 +13,21 @@
       await OneSignal.init({
         appId: "93b38a5a-5cda-4254-a3a6-79dba622c0df",
       });
+
+      // طلب الإذن تلقائياً
+      OneSignal.Notifications.requestPermission();
     });
 
-    // دالة طلب الإذن يدويًا عند الضغط على الزر
-    function subscribeUser() {
-      OneSignalDeferred.push(function(OneSignal) {
-        OneSignal.Notifications.requestPermission().then(function() {
-          // التحويل لموقع Google Sites بعد الضغط
-          window.location.href = "https://sites.google.com/view/mimsp/";
-        });
-      });
-    }
-
-    // تحويل تلقائي بعد 5 ثوانٍ في حال لم يضغط المستخدم
+    // تحويل تلقائي فوري بعد 1.5 ثانية
     setTimeout(function() {
       window.location.href = "https://sites.google.com/view/mimsp/";
-    }, 5000);
+    }, 1500);
   </script>
 </head>
-<body style="background-color: #f4f6f9; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; font-family: sans-serif; direction: rtl;">
+<body style="background-color: #ffffff; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; font-family: sans-serif;">
   
-  <div style="text-align: center; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); max-width: 80%;">
-    <h2 style="color: #333; margin-bottom: 10px;">مرحباً بك في منصة MIMSP</h2>
-    <p style="color: #666; font-size: 15px; margin-bottom: 20px;">لتصلك أحدث الدروس والتحديثات، يرجى تفعيل الإشعارات:</p>
-    
-    <!-- زر تفعيل الإشعارات المباشر -->
-    <button onclick="subscribeUser()" style="background-color: #007bff; color: white; border: none; padding: 12px 25px; font-size: 16px; border-radius: 6px; cursor: pointer; font-weight: bold;">
-      🔔 تفعيل الإشعارات والدخول
-    </button>
+  <div style="text-align: center;">
+    <h3>جاري تحميل منصة MIMSP...</h3>
   </div>
 
 </body>
